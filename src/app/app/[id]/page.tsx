@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { ArrowLeft, Star, ExternalLink, Github } from 'lucide-react';
 import { apps } from '../../../data/apps';
 import PlaceholderImage from '../../../components/PlaceholderImage';
+import { useState } from 'react';
+import Cookies from 'js-cookie';
 
 interface AppDetailsPageProps {
   params: {
@@ -19,18 +21,40 @@ export default function AppDetailsPage({ params }: AppDetailsPageProps) {
   if (!app) {
     notFound();
   }
+
+  const [currentRating, setCurrentRating] = useState(app.rating);
+  const [showPopup, setShowPopup] = useState(false);
+  const [showAlreadyRatedPopup, setShowAlreadyRatedPopup] = useState(false);
+  const [hoveredRating, setHoveredRating] = useState(0);
+
+  const handleRatingClick = (newRating: number) => {
+    const cookieKey = `rating_${app.id}`;
+    if (Cookies.get(cookieKey)) {
+      setShowAlreadyRatedPopup(true);
+      setTimeout(() => setShowAlreadyRatedPopup(false), 2000);
+      return;
+    }
+
+    setCurrentRating(newRating);
+    Cookies.set(cookieKey, newRating.toString(), { expires: 365 });
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 2000);
+  };
   
   return (
     <div className="max-w-4xl mx-auto pb-12">
       <div className="mb-8">
-        <Link href="/" className="inline-flex items-center text-[#AAAAAA] hover:text-[#F5F5F5] transition-colors">
+        <Link 
+          href="/" 
+          className="inline-flex items-center text-[#AAAAAA] hover:text-[#F5F5F5] transition-colors rounded-full px-4 py-2 hover:bg-[#1A1A1A]"
+        >
           <ArrowLeft size={16} className="mr-2" />
           <span>Back to Directory</span>
         </Link>
       </div>
       
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div className="relative h-64 md:h-80 w-full overflow-hidden rounded-xl">
+        <div className="relative h-64 md:h-80 w-full overflow-hidden rounded-xl bg-[#1A1A1A] border border-gray-800/30">
           {app.image.startsWith('/') ? (
             <PlaceholderImage 
               seed={app.title} 
@@ -44,20 +68,23 @@ export default function AppDetailsPage({ params }: AppDetailsPageProps) {
         
         <div className="space-y-6">
           <div>
-            <h1 className="text-3xl font-bold text-[#F5F5F5] mb-2">{app.title}</h1>
-            <div className="flex items-center space-x-2 mb-4">
-              <span className="px-3 py-1 bg-[#333333] text-[#F5F5F5] text-xs rounded-full">{app.category}</span>
+            <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-purple-400 via-pink-500 to-orange-500 bg-clip-text text-transparent mb-4">
+              {app.title}
+            </h1>
+            <div className="flex items-center space-x-3 mb-4">
+              <span className="text-s text-[#F5F5F5]">Category:</span>
+              <span className="text-xs text-[#AAAAAA]">{app.category}</span>
               <span className="text-[#AAAAAA] text-sm">Released: {app.releaseDate}</span>
             </div>
-            <p className="text-[#AAAAAA]">{app.description}</p>
+            <p className="text-[#F5F5F5]/90 text-lg leading-relaxed">{app.description}</p>
           </div>
           
-          <div className="flex items-center space-x-3">
-            <div className="h-10 w-10 relative overflow-hidden rounded-full">
+          <div className="flex items-center space-x-4 p-4 bg-[#1A1A1A] rounded-xl border border-gray-800/30">
+            <div className="h-12 w-12 relative overflow-hidden rounded-full border border-gray-800/30">
               {app.authorImage ? (
                 <Image src={app.authorImage} alt={app.author} fill className="object-cover" />
               ) : (
-                <PlaceholderImage seed={app.author} text="" width={40} height={40} />
+                <PlaceholderImage seed={app.author} text="" width={48} height={48} />
               )}
             </div>
             <div>
@@ -67,9 +94,9 @@ export default function AppDetailsPage({ params }: AppDetailsPageProps) {
           </div>
           
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-[#1A1A1A] p-4 rounded-lg">
+            <div className="bg-[#1A1A1A] p-4 rounded-xl border border-gray-800/30">
               <h3 className="text-[#AAAAAA] text-sm mb-2">Rating</h3>
-              <div className="flex items-center">
+              <div className="flex items-center relative">
                 <div className="flex mr-2">
                   {Array(5)
                     .fill(0)
@@ -77,29 +104,50 @@ export default function AppDetailsPage({ params }: AppDetailsPageProps) {
                       <Star
                         key={i}
                         size={16}
-                        className={i < app.rating ? 'fill-[#FFD700] text-[#FFD700]' : 'text-[#333333]'}
+                        className={
+                          i < (hoveredRating || currentRating)
+                            ? 'stroke-purple-400 fill-orange-500 cursor-pointer transition-colors'
+                            : 'text-[#333333] cursor-pointer transition-colors'
+                        }
+                        style={i < (hoveredRating || currentRating) ? {
+                          fill: 'url(#starGradient)',
+                          stroke: 'url(#starGradient)'
+                        } : {}}
+                        onMouseEnter={() => setHoveredRating(i + 1)}
+                        onMouseLeave={() => setHoveredRating(0)}
+                        onClick={() => handleRatingClick(i + 1)}
+                        role="button"
+                        aria-label={`Rate ${i + 1} stars`}
                       />
                     ))}
                 </div>
-                <span className="text-[#F5F5F5]">{app.rating}/5</span>
+                <span className="text-[#F5F5F5]">{currentRating}/5</span>
+                {showPopup && (
+                  <div className="absolute right-0 top-[-30px] bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg">
+                    Rating recorded!
+                  </div>
+                )}
+                {showAlreadyRatedPopup && (
+                  <div className="absolute right-0 top-[-30px] bg-red-600 text-white text-xs px-2 py-1 rounded shadow-lg">
+                    You have already rated this app.
+                  </div>
+                )}
               </div>
+              <svg width="0" height="0">
+                <defs>
+                  <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#C084FC" />
+                    <stop offset="50%" stopColor="#EC4899" />
+                    <stop offset="100%" stopColor="#F97316" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
             
-            <div className="bg-[#1A1A1A] p-4 rounded-lg">
-              <h3 className="text-[#AAAAAA] text-sm mb-2">Complexity</h3>
-              <div className="flex items-center">
-                <div className="flex mr-2">
-                  {Array(5)
-                    .fill(0)
-                    .map((_, i) => (
-                      <Star
-                        key={i}
-                        size={16}
-                        className={i < app.complexity ? 'fill-[#FFD700] text-[#FFD700]' : 'text-[#333333]'}
-                      />
-                    ))}
-                </div>
-                <span className="text-[#F5F5F5]">{app.complexity}/5</span>
+            <div className="bg-[#1A1A1A] p-4 rounded-xl border border-gray-800/30">
+              <h3 className="text-[#AAAAAA] text-sm mb-2 text-center">Category</h3>
+              <div className="flex flex-col items-center">
+                <span className="text-s text-[#F5F5F5]">{app.category}</span>
               </div>
             </div>
           </div>
@@ -109,7 +157,7 @@ export default function AppDetailsPage({ params }: AppDetailsPageProps) {
               href={app.link} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-full bg-[#D4AF37] px-6 py-2 text-sm font-medium text-[#121212] transition hover:bg-[#FFD700] flex-1"
+              className="rounded-full bg-gradient-to-r from-purple-400 via-pink-500 to-orange-500 px-6 py-2.5 text-sm font-medium text-[#F5F5F5] transition-all hover:opacity-90 hover:scale-105 flex items-center justify-center gap-2 flex-1"
             >
               <ExternalLink size={16} />
               <span>Visit App</span>
@@ -120,7 +168,7 @@ export default function AppDetailsPage({ params }: AppDetailsPageProps) {
                 href={app.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-full bg-[#333333] px-6 py-2 text-sm font-medium text-[#F5F5F5] transition hover:bg-[#444444]"
+                className="flex items-center justify-center gap-2 rounded-full bg-[#1A1A1A] px-6 py-2.5 text-sm font-medium text-[#F5F5F5] transition hover:bg-[#242424] border border-gray-800/30"
               >
                 <Github size={16} />
                 <span>GitHub</span>
@@ -131,4 +179,4 @@ export default function AppDetailsPage({ params }: AppDetailsPageProps) {
       </div>
     </div>
   );
-} 
+}
