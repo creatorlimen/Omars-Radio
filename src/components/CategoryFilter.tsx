@@ -32,7 +32,7 @@ export default function CategoryFilter({ apps, onFilterChange }: CategoryFilterP
           className={`px-4 py-2 rounded-full text-sm font-medium transition 
             ${selectedCategory === category 
               ? 'bg-gradient-to-r from-purple-400 via-pink-500 to-orange-500 text-[#121212]' 
-              : 'bg-[#333333] text-[#F5F5F5] hover:bg-[#444444]'
+              : 'bg-[#111111] text-[#F5F5F5] hover:bg-[#444444]'
             }`}
         >
           {category}

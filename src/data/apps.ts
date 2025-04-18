@@ -8,6 +8,7 @@ export const apps: AppData[] = [
     image: '/images/apps/code-gpt.jpg',
     author: 'Cursor Team',
     authorImage: '/images/authors/cursor-team.jpg',
+    authorLink: 'https://www.cursor.com/',
     category: 'Development',
     rating: 4.8,
     complexity: 3,
@@ -21,6 +22,7 @@ export const apps: AppData[] = [
     image: '/images/apps/shadcn-studio.jpg',
     author: 'UI Craftsman',
     authorImage: '/images/authors/ui-craftsman.jpg',
+    authorLink: 'https://github.com/shadcn',
     category: 'Design',
     rating: 4.5,
     complexity: 2,
@@ -34,6 +36,7 @@ export const apps: AppData[] = [
     image: '/images/apps/next-auth-dashboard.jpg',
     author: 'Auth Experts',
     authorImage: '/images/authors/auth-experts.jpg',
+    authorLink: 'https://authjs.dev',
     category: 'Authentication',
     rating: 4.7,
     complexity: 4,
@@ -47,6 +50,7 @@ export const apps: AppData[] = [
     image: '/images/apps/tailwind-themes.jpg',
     author: 'CSS Wizards',
     authorImage: '/images/authors/css-wizards.jpg',
+    authorLink: 'https://tailwindcss.com',
     category: 'Design',
     rating: 4.3,
     complexity: 2,
@@ -60,6 +64,7 @@ export const apps: AppData[] = [
     image: '/images/apps/api-forge.jpg',
     author: 'API Guild',
     authorImage: '/images/authors/api-guild.jpg',
+    authorLink: 'https://swagger.io',
     category: 'Development',
     rating: 4.6,
     complexity: 3,
@@ -73,10 +78,11 @@ export const apps: AppData[] = [
     image: '/images/apps/devflow.jpg',
     author: 'DevOps Dojo',
     authorImage: '/images/authors/devops-dojo.jpg',
+    authorLink: 'https://vercel.com',
     category: 'Productivity',
     rating: 4.9,
     complexity: 4,
     releaseDate: 'June 2023',
     link: 'https://github.com/vercel/vercel'
   }
-]; 
+];

@@ -39,7 +39,7 @@ export default function SearchBar({ apps, onSearchResults }: SearchBarProps) {
         placeholder="Search apps by name, description, or category..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full pl-10 pr-4 py-2 rounded-full bg-[#333333] text-[#F5F5F5] placeholder:text-[#AAAAAA] 
+        className="w-full pl-10 pr-4 py-2 rounded-full bg-[#222222] text-[#F5F5F5] placeholder:text-[#AAAAAA] 
           border-2 border-transparent focus:border-[#D4AF37] focus:outline-none transition"
       />
     </div>
