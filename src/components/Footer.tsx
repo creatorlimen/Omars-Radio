@@ -63,7 +63,7 @@ export default function Footer() {
         
         <div className="mt-8 pt-8 border-t border-gray-800/30 text-center">
           <p className="text-[#AAAAAA] text-sm">
-            © {new Date().getFullYear()} Cursor-Built Apps Directory. Built with Next.js and Tailwind CSS.
+            &copy; {new Date().getFullYear()}. Cursor-Built Apps Directory.
           </p>
         </div>
       </div>

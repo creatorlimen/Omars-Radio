@@ -66,4 +66,25 @@
   - Business logic → `/lib/utils` (e.g., `formatTimestamp.ts`).  
   - API routes → `/app/api` (server-only).  
 - **Strict Boundaries**:  
-  - Never mix UI logic with data fetching (e.g., keep `page.tsx` focused on rendering).  
+  - Never mix UI logic with data fetching (e.g., keep `page.tsx` focused on rendering).
+
+---
+
+## 💻 **Windows PowerShell Operations**
+### Environment Context
+- **Local Testing**: Development and testing are performed in Windows PowerShell environment
+- **Command Syntax**: Use PowerShell-specific commands instead of Bash/Linux commands
+- **Path Format**: Use Windows path format with backslashes (e.g., `src\components`)
+
+### File & Directory Commands
+- **Removal**:
+  - Files: `Remove-Item -Path filepath`
+  - Directories: `Remove-Item -Path dirpath -Recurse -Force`
+  - Multiple items: `Remove-Item -Path item1, item2 -Force`
+- **Creation**:
+  - Files: `New-Item -Path filepath -ItemType File`
+  - Directories: `New-Item -Path dirpath -ItemType Directory`
+- **Movement/Rename**:
+  - Files/Dirs: `Move-Item -Path source -Destination target`
+  
+Use these commands instead of Linux-style commands (rm, mkdir, mv) when working in Windows environments.

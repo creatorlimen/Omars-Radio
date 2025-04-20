@@ -36,8 +36,11 @@ export default function Home() {
           Cursor-Built Apps
         </h1>
         <p className="mx-auto max-w-2xl text-xl text-[#F5F5F5]/90 leading-relaxed">
-          Discover amazing applications built with the Cursor IDE. From productivity tools to 
+          Discover amazing applications built with the Cursor&copy; IDE. From productivity tools to 
           development utilities, explore what the community has created.
+        </p>
+        <p className="mx-auto max-w-2xl text-xl text-[#F5F5F5]/90 leading-relaxed">
+          This site is not an official part of the Cursor&copy; Company. I built it as a passion project to showcase the amazing apps built using the equally amazing Cursor Platform. Any similarities with the official Cursor&copy; site is just me trying to convey the Cursor&copy; &ldquo;feeling&rdquo;. Shoutout to the Cursor&copy; Team.
         </p>
       </header>
 

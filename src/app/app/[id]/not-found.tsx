@@ -7,7 +7,7 @@ export default function AppNotFound() {
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-bold text-[#F5F5F5]">App Not Found</h1>
         <p className="text-[#AAAAAA] max-w-md mx-auto">
-          The app you're looking for doesn't exist or may have been removed.
+          The app you&apos;re looking for doesn&apos;t exist or may have been removed.
         </p>
         <Link
           href="/"
@@ -19,4 +19,4 @@ export default function AppNotFound() {
       </div>
     </div>
   );
-} 
+}
