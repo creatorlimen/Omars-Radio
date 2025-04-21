@@ -56,7 +56,7 @@ export default function AppCard({
       {/* Main content */}
       <div className="relative rounded-xl p-5 bg-[#010101] border border-gray-800/30 transition-all duration-300 hover:border-[#D4AF37]/30 hover:translate-y-[-2px] group">
         <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
-          {image.startsWith('/') ? (
+          {!image ? (
             <PlaceholderImage 
               seed={title} 
               className="w-full h-full" 

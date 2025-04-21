@@ -55,7 +55,7 @@ export default function AppDetailsPage({ params }: AppDetailsPageProps) {
       
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className="relative h-[358px] md:h-[458px] w-full overflow-hidden rounded-xl bg-[#1A1A1A] border border-gray-800/30">
-          {app.image.startsWith('/') ? (
+          {!app.image ? (
             <PlaceholderImage 
               seed={app.title} 
               className="w-full h-full" 
