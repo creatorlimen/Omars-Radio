@@ -17,11 +17,11 @@ export default function Header() {
               <Link href="/" className="text-[#F5F5F5] hover:text-[#AAAAAA] transition-all hover:scale-105 text-center text-sm font-medium tracking-wide uppercase">
                 Directory
               </Link>
-              <Link href="#features" className="text-[#F5F5F5] hover:text-[#AAAAAA] transition-all hover:scale-105 text-center text-sm font-medium tracking-wide uppercase">
-                Features
-              </Link>
               <Link href="#showcase" className="text-[#F5F5F5] hover:text-[#AAAAAA] transition-all hover:scale-105 text-center text-sm font-medium tracking-wide uppercase">
                 Showcase
+              </Link>
+              <Link href="https://forms.gle/hJ24foh11QynzBHf8" className="text-[#F5F5F5] hover:text-[#AAAAAA] transition-all hover:scale-105 text-center text-sm font-medium tracking-wide uppercase">
+                Submit Your App
               </Link>
             </nav>
             <div className="flex-1 flex justify-end">
