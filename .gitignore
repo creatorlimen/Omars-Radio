@@ -71,3 +71,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Exclude a specific file
+C:\Users\HOME\Desktop\cursor-built-apps-directory\PLAN.md
+C:\Users\HOME\Desktop\cursor-built-apps-directory\copilot-instructions.md
