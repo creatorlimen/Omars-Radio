@@ -40,11 +40,8 @@ export default function AppCard({
   };
 
   return (
-<<<<<<< HEAD
+
     <div className="w-full relative transition-all hover:opacity-90 hover:scale-105">
-=======
-    <div className="w-full relative">
->>>>>>> 803da512695e4da3337a35f6394eef69807e76e5
       {/* Glow effect container */}
       <div className="absolute -inset-[1px] rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)]">
         <div className="absolute inset-0 bg-[#1E1E1E] rounded-xl"></div>
