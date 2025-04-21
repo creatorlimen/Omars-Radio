@@ -2,18 +2,18 @@ import { AppData } from '../interfaces/app';
 
 export const apps: AppData[] = [
   {
-    id: 'code-gpt',
-    title: 'Code GPT',
-    description: 'AI-powered code assistant that helps developers write, review, and refactor code with intelligent suggestions.',
-    image: '/images/apps/code-gpt.jpg',
-    author: 'Cursor Team',
+    id: 'create-town',
+    title: 'Create . Town',
+    description: 'This platform serves as a creative canvas for users to design and build their own virtual towns.',
+    image: '/images/apps/create-town.jpg',
+    author: 'Shaoru Ian Huang',
     authorImage: '/images/authors/cursor-team.jpg',
-    authorLink: 'https://www.cursor.com/',
-    category: 'Development',
+    authorLink: 'https://x.com/shaoruu',
+    category: 'Design',
     rating: 4.8,
     complexity: 3,
-    releaseDate: 'January 2023',
-    link: 'https://github.com/microsoft/CodeGPT'
+    releaseDate: 'November 2024',
+    link: 'https://create.town/'
   },
   {
     id: 'shadcn-studio',
@@ -27,7 +27,7 @@ export const apps: AppData[] = [
     rating: 4.5,
     complexity: 2,
     releaseDate: 'March 2023',
-    link: 'https://github.com/shadcn-ui/ui'
+    link: 'https://github.com/nextauthjs/next-auth'
   },
   {
     id: 'next-auth-dashboard',
