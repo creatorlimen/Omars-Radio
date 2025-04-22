@@ -14,7 +14,6 @@ export default function AppCard({
   description,
   image,
   author,
-  authorImage,
   category,
   rating,
   releaseDate,

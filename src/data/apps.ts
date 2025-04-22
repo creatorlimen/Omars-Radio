@@ -2,18 +2,18 @@ import { AppData } from '../interfaces/app';
 
 export const apps: AppData[] = [
   {
-    id: 'create-town',
-    title: 'Create . Town',
-    description: 'This platform serves as a creative canvas for users to design and build their own virtual towns.',
+    id: 'ry-os',
+    title: 'ryOS',
+    description: 'A web-based OS experience.',
     image: '/images/apps/ry-os.jpg',
-    author: 'Shaoru Ian Huang',
-    authorLink: 'https://x.com/shaoruu',
-    category: 'Design',
+    author: 'Ryo Lu',
+    authorLink: 'https://x.com/ryolu_',
+    category: 'Development',
     rating: 4.8,
-    releaseDate: 'November 2024',
-    link: 'https://create.town/',
+    releaseDate: 'January 2025',
+    link: 'https://os.ryo.lu/',
     githubUrl: undefined,
-    additionalInfo: 'This platform serves as a creative canvas for users to design and build their own virtual towns.<p>It offers tools and features that enable the construction of personalized town layouts, catering to enthusiasts of urban planning, game design, or storytelling.'
+    additionalInfo: 'This project is a playful exploration of personal computing that blends nostalgic Macintosh-style interfaces with modern web technologies and AI.<br /><br /> It’s both an art piece and a functional tool — a browser-based experiment in building systems that feel personal, creative, and human, not just utilitarian.<br /><br />At its heart, it’s about reimagining how we interact with technology when it becomes an intuitive extension of thought — where the interface fades away and what remains is pure vibe.'
   },
   {
     id: 'shadcn-studio',
