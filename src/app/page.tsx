@@ -41,7 +41,7 @@ export default function Home() {
         </p><br />
         <p className="mx-auto max-w-2xl text-xl text-[#F5F5F5]/90 leading-relaxed bg-[#1A1A1A] p-4 rounded-xl border border-gray-800/30">
           Disclaimer: This site is not an official part of the Cursor&copy; Company.<br /><br /> I built it as a passion project to showcase the amazing apps built using the equally amazing Platform. <br /><br />
-          Any similarities with the official site is just me trying to mirror the company's vibe. Shoutout to the Cursor Team😊.
+          Any similarities with the official site is just me trying to mirror the company&apos;s vibe. Shoutout to the Cursor Team😊.
         </p>
       </header>
 
