@@ -174,8 +174,8 @@ export default function AppDetailsPage({ params }: AppDetailsPageProps) {
           </div>
         </div>
       </div>
-      
-      <div className="mt-8 space-y-6">
+
+      <div className="mt-16 space-y-6">
         <h2 className="text-2xl font-bold tracking-tight text-[#F5F5F5]">Additional Information</h2>
         <div className="bg-[#1A1A1A] p-6 rounded-xl border border-gray-800/30 space-y-4">
           {app.additionalInfo ? 
