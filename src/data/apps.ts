@@ -4,7 +4,7 @@ export const apps: AppData[] = [
   {
     id: 'ry-os',
     title: 'ryOS',
-    description: 'A web-based OS experience.',
+    description: 'A web-based OS experience. This project is a playful exploration of personal computing that blends nostalgic Macintosh-style interfaces with modern web technologies and AI.',
     image: '/images/apps/ry-os.jpg',
     author: 'Ryo Lu',
     authorLink: 'https://x.com/ryolu_',
@@ -13,12 +13,12 @@ export const apps: AppData[] = [
     releaseDate: 'January 2025',
     link: 'https://os.ryo.lu/',
     githubUrl: undefined,
-    additionalInfo: 'This project is a playful exploration of personal computing that blends nostalgic Macintosh-style interfaces with modern web technologies and AI.<br /><br /> It’s both an art piece and a functional tool — a browser-based experiment in building systems that feel personal, creative, and human, not just utilitarian.<br /><br />At its heart, it’s about reimagining how we interact with technology when it becomes an intuitive extension of thought — where the interface fades away and what remains is pure vibe.'
+    additionalInfo: 'This project is a playful exploration of personal computing that blends nostalgic Macintosh-style interfaces with modern web technologies and AI.<p>Its both an art piece and a functional tool — a browser-based experiment in building systems that feel personal, creative, and human, not just utilitarian.<p>At its heart, its about reimagining how we interact with technology when it becomes an intuitive extension of thought — where the interface fades away and what remains is pure vibe.'
   },
   {
     id: 'create-town',
     title: 'Create . Town',
-    description: 'This platform serves as a creative canvas for users to design and build their own virtual towns.',
+    description: 'This platform serves as a creative canvas for users to design and build their own virtual towns. Let your imagination take the reins and create magic.',
     image: '/images/apps/create-town.jpg',
     author: 'Shaoru Ian Huang',
     authorLink: 'https://x.com/shaoruu',
@@ -32,7 +32,7 @@ export const apps: AppData[] = [
   {
     id: 'fly-pieter-com',
     title: 'Fly.Pieter.Com',
-    description: '3d flying game in-browser.',
+    description: '3d flying game in-browser. Jump into a browser‑based 3‑D flight game where you can fly, race, and explore with other players in no time.',
     image: '/images/apps/fly-pieter-com.jpg',
     author: 'Pieter Levels',
     authorLink: 'https://x.com/levelsio',
@@ -46,7 +46,7 @@ export const apps: AppData[] = [
   {
     id: 'buzzclip',
     title: 'BuzzClip',
-    description: 'You are 60 seconds from your first viral UGC Tiktok.',
+    description: 'You are 60 seconds from your first viral UGC Tiktok. Create viral TikTok AI UGCs in 60 seconds with BuzzClip.',
     image: '/images/apps/buzzclip.jpg',
     author: 'Eric Djavid',
     authorLink: 'https://x.com/ericdjav',
@@ -55,12 +55,12 @@ export const apps: AppData[] = [
     releaseDate: 'February 2025',
     link: 'http://buzzclip.io/',
     githubUrl: undefined,
-    additionalInfo: 'Create viral TikTok AI UGCs in 60 seconds with BuzzClip:1. Choose among 100+ AI-powered characters.2. Customize your UGC (viral hook, voiceover, music, demo video..).3. Publish directly to Tiktok.'
+    additionalInfo: 'Create viral TikTok AI UGCs in 60 seconds with BuzzClip:<p>1. Choose among 100+ AI-powered characters.<p>2. Customize your UGC (viral hook, voiceover, music, demo video..).<p>3. Publish directly to Tiktok.'
   },
   {
     id: 'app-cost-calculator',
     title: 'App Cost Calculator',
-    description: 'How much will it cost to build an MVP for your app?',
+    description: 'How much will it cost to build an MVP for your app? Estimate how much it would cost you to hire a developer to build your project idea.',
     image: '/images/apps/app-cost-calculator.jpg',
     author: 'Pere Ayats',
     authorLink: 'https://x.com/PereAyats',
@@ -69,12 +69,12 @@ export const apps: AppData[] = [
     releaseDate: 'April 2025',
     link: 'https://craftedagencies.com/tools/app-cost-calculator',
     githubUrl: undefined,
-    additionalInfo: 'How much will it cost to build an MVP for your app? Estimate how much it would cost you to hire a developer to build your project idea.I have scraped more than 150k Upwork jobs to give as much information as possible to an AI that calculates these costs for you.'
+    additionalInfo: 'How much will it cost to build an MVP for your app?<p>Estimate how much it would cost you to hire a developer to build your project idea.<p>I have scraped more than 150k Upwork jobs to give as much information as possible to an AI that calculates these costs for you.'
   },
   {
     id: 'postroast',
     title: 'Postroast',
-    description: 'AI insights to improve your post performance.',
+    description: 'AI insights to improve your post performance. PostRoast analyzes your content for engagement, clarity, and provides actionable feedback to improve.',
     image: '/images/apps/postroast.jpg',
     author: 'Audiencon',
     authorLink: 'https://x.com/audiencon',
@@ -83,12 +83,12 @@ export const apps: AppData[] = [
     releaseDate: 'April 2025',
     link: 'https://postroast.app/',
     githubUrl: undefined,
-    additionalInfo: 'Get your X (Twitter) posts roasted by AI! PostRoast analyzes your content for engagement, clarity, and provides actionable feedback to improve.'
+    additionalInfo: 'Get your X (Twitter) posts roasted by AI!<p>PostRoast analyzes your content for engagement, clarity, and provides actionable feedback to improve.'
   },
   {
     id: 'how-india-games',
     title: 'How India Games',
-    description: 'Survey platform tailored for gamers in India.',
+    description: 'Survey platform tailored for gamers in India. This site presents a series of questions designed to gather insights into gaming preferences, habits, and demographics.',
     image: '/images/apps/how-india-games.jpg',
     author: 'Ishan Sukul',
     authorLink: 'https://x.com/isawsukul',
@@ -102,7 +102,7 @@ export const apps: AppData[] = [
   {
     id: 'gemini-95',
     title: 'Gemini 95',
-    description: 'a Windows 95 simulator where every app uses Gemini',
+    description: 'Gemini 95 is a Windows 95 simulator where every app uses Gemini as the engine to carry out a variety of tasks. Embrace nostalgia.',
     image: '/images/apps/gemini-95.jpg',
     author: 'Ammaar Reshi',
     authorLink: 'https://x.com/ammaar',
@@ -111,7 +111,7 @@ export const apps: AppData[] = [
     releaseDate: 'April 2025',
     link: 'https://aistudio.google.com/app/u/0/apps/bundled/gemini_95',
     githubUrl: undefined,
-    additionalInfo: 'a Windows 95 simulator where every app uses Gemini!- Paint judges your artwork - Chrome generates full 90s websites - Minesweeper gives AI hints'
+    additionalInfo: 'Gemini 95 is a Windows 95 simulator where every app uses Gemini!<p>- Paint judges your artwork <p>- Chrome generates full 90s websites <p>- Minesweeper gives AI hints'
   },
   {
     id: 'flowerman',
@@ -126,5 +126,47 @@ export const apps: AppData[] = [
     link: 'https://ljacobsson.github.io/flowerman/',
     githubUrl: 'https://github.com/ljacobsson',
     additionalInfo: 'Flowerman is a simple and engaging, floral-themed game centered on collecting flowers, navigate through stages by collecting all available flowers.'
+  },
+  {
+    id: 'use-flux',
+    title: 'Use Flux',
+    description: 'Train the highest quality AI Image models for custom AI Headshots, Food Photos, AI Portraits, Product Shots, Destination Photos.',
+    image: '/images/apps/use-flux.jpg',
+    author: 'Alex Shaq',
+    authorLink: 'https://x.com/_alexshaq',
+    category: 'Image Generation',
+    rating: 4.9,
+    releaseDate: 'September 2024',
+    link: 'http://useflux.ai/',
+    githubUrl: undefined,
+    additionalInfo: 'The No 1 way to train custom AI image models for headshots, portraits and brand assets.'
+  },
+  {
+    id: 'pieterfly-atc-visualizer',
+    title: 'PieterFly ATC Visualizer',
+    description: 'Flightradar-style viewer for the planes in Fly.Pieter.Com. It is a lightweight, client‑side, flight‑tracker that plots every airborne plane from fly.pieter.com in real‑time.',
+    image: '/images/apps/pieterfly-atc-visualizer.jpg',
+    author: 'Dan Perks',
+    authorLink: 'https://x.com/danperks_',
+    category: 'Gaming',
+    rating: 4.9,
+    releaseDate: 'February 2025',
+    link: 'https://pieteratc.com/',
+    githubUrl: 'https://github.com/danperks',
+    additionalInfo: 'PieterFly ATC Visualizer is a lightweight, client‑side, flight‑tracker that plots every airborne plane from fly.pieter.com in real‑time.<p>Spun up with @levelsio’s browser code and a single prompt to @cursor_ai, it delivers a smooth “Flightradar‑style” map in minutes—no backend, no fuss, just live skies at a glance.'
+  },
+  {
+    id: 'nemorize',
+    title: 'Nemorize',
+    description: 'Test and train your visual memory skills with a fast‑paced memory challenge where glowing squares briefly reveal a pattern—then vanish.',
+    image: '/images/apps/nemorize.jpg',
+    author: 'Onur Gumus',
+    authorLink: 'https://x.com/OnurGumusDev',
+    category: 'Gaming',
+    rating: 4.9,
+    releaseDate: 'April 2025',
+    link: 'https://nemorize.com/',
+    githubUrl: 'https://github.com/OnurGumus/onurgumus.github.io',
+    additionalInfo: 'Nemorize is a fast‑paced memory challenge where glowing squares briefly reveal a pattern—then vanish!<p>Tap the same squares from memory before time runs out, advancing to ever‑longer sequences while guarding your three precious lives.<p>How many levels can you master before the board outsmarts you?'
   }
 ];
