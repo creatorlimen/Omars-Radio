@@ -162,7 +162,7 @@ export default function AppCard({
               </a>
 
               <Link href={`/app/${id}`} className="flex items-center text-xs text-[#AAAAAA] hover:text-[#F5F5F5] transition-colors">
-                <span>Details</span>
+                <span>Full Details</span>
                 <ChevronRight size={14} className="text-gradient-to-r from-purple-400 via-pink-500 to-orange-500" />
               </Link>
             </div>
