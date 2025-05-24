@@ -30,6 +30,20 @@ export const apps: AppData[] = [
     additionalInfo: 'This platform serves as a creative canvas for users to design and build their own virtual towns.<p>It offers tools and features that enable the construction of personalized town layouts, catering to enthusiasts of urban planning, game design, or storytelling.'
   },
   {
+    id: 'prettyinsights',
+    title: 'PrettyInsights ',
+    description: 'A Google Analytics alternative. Say goodbye to complex reports— AI-powered analytics conversations let you interact with your data directly and naturally.',
+    image: '/images/apps/prettyinsights.jpg',
+    author: 'Andrei Saioc',
+    authorLink: 'https://x.com/asaio87',
+    category: 'SEO and Marketing',
+    rating: 4.5,
+    releaseDate: 'April 2025',
+    link: 'https://prettyinsights.com/',
+    githubUrl: undefined,
+    additionalInfo: 'Our platform is built with a Privacy First by Design approach, ensuring full compliance with GDPR, PECR, CCPA, and other global privacy regulations. We never collect or store personal data from visitors, so there’s no need for intrusive cookie banners—just clean, respectful user experiences. With a lightweight tracking script, your website stays lightning-fast and fully responsive. Real-time visitor monitoring provides instant visibility into user behavior, page views, and traffic sources, while customizable alerts and notifications keep you informed of key trends, anomalies, and milestones as they happen.<p>Our intuitive dashboard simplifies web analytics, offering powerful insights through a user-friendly, clutter-free interface. Say goodbye to complex reports— AI-powered analytics conversations let you interact with your data directly and naturally. Easily track key events, conversions, and user journeys using our Goals Tracker and Events Explorer. It’s everything you need to understand your audience and optimize performance—without compromising privacy.'
+  },
+  {
     id: 'fly-pieter-com',
     title: 'Fly.Pieter.Com',
     description: '3d flying game in-browser. Jump into a browser‑based 3‑D flight game where you can fly, race, and explore with other players in no time.',
@@ -38,7 +52,7 @@ export const apps: AppData[] = [
     authorLink: 'https://x.com/levelsio',
     category: 'Gaming',
     rating: 4.5,
-    releaseDate: 'March 2023',
+    releaseDate: 'March 2025',
     link: 'https://fly.pieter.com/',
     githubUrl: 'https://github.com/levelsio',
     additionalInfo: 'A fun free-to-play MMO flight sim, 100% made with AI, without loading screens and GBs of updates every time you wanna play.'
