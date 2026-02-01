@@ -2,38 +2,57 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary text-white mt-20 border-t-4 border-primary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <footer className="relative bg-gradient-to-br from-secondary via-secondary to-secondary/95 text-white mt-20 border-t-4 border-primary overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-2xl" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* About */}
           <div>
-            <h3 className="font-black text-lg mb-4 uppercase tracking-wide">O'MARS RADIO</h3>
-            <p className="text-sm font-medium text-white/90">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center border-2 border-primary shadow-lg shadow-primary/20">
+                <span className="font-black text-primary text-xs">OM</span>
+              </div>
+              <h3 className="font-black text-lg uppercase tracking-wide">O'MARS RADIO</h3>
+            </div>
+            <p className="text-sm font-medium text-white/80 leading-relaxed">
               Voices. Identity. Perspective. A digital radio platform for African and diaspora audiences.
             </p>
+            <div className="mt-4 inline-block bg-primary/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-wider">📻 Broadcasting Excellence</span>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-black mb-4 uppercase tracking-wide text-sm">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="font-black mb-5 uppercase tracking-wide text-sm flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+              Quick Links
+            </h4>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/" className="text-white/80 hover:text-primary font-medium transition-colors">
+                <Link href="/" className="text-white/70 hover:text-primary font-medium transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-2">
+                  <span className="w-1 h-1 bg-white/40 rounded-full"></span>
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-white/80 hover:text-primary font-medium transition-colors">
+                <Link href="/about" className="text-white/70 hover:text-primary font-medium transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-2">
+                  <span className="w-1 h-1 bg-white/40 rounded-full"></span>
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/listen-live" className="text-white/80 hover:text-primary font-medium transition-colors">
+                <Link href="/listen-live" className="text-white/70 hover:text-primary font-medium transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-2">
+                  <span className="w-1 h-1 bg-white/40 rounded-full"></span>
                   Listen Live
                 </Link>
               </li>
               <li>
-                <Link href="/top-shows" className="text-white/80 hover:text-primary font-medium transition-colors">
+                <Link href="/top-shows" className="text-white/70 hover:text-primary font-medium transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-2">
+                  <span className="w-1 h-1 bg-white/40 rounded-full"></span>
                   Top Shows
                 </Link>
               </li>
@@ -42,25 +61,32 @@ export default function Footer() {
 
           {/* Programs */}
           <div>
-            <h4 className="font-black mb-4 uppercase tracking-wide text-sm">Programs</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="font-black mb-5 uppercase tracking-wide text-sm flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+              Programs
+            </h4>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/schedule" className="text-white/80 hover:text-primary font-medium transition-colors">
+                <Link href="/schedule" className="text-white/70 hover:text-primary font-medium transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-2">
+                  <span className="w-1 h-1 bg-white/40 rounded-full"></span>
                   Schedule
                 </Link>
               </li>
               <li>
-                <Link href="/listen-again" className="text-white/80 hover:text-primary font-medium transition-colors">
+                <Link href="/listen-again" className="text-white/70 hover:text-primary font-medium transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-2">
+                  <span className="w-1 h-1 bg-white/40 rounded-full"></span>
                   Listen Again
                 </Link>
               </li>
               <li>
-                <Link href="/oaps" className="text-white/80 hover:text-primary font-medium transition-colors">
+                <Link href="/oaps" className="text-white/70 hover:text-primary font-medium transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-2">
+                  <span className="w-1 h-1 bg-white/40 rounded-full"></span>
                   Our Presenters
                 </Link>
               </li>
               <li>
-                <Link href="/education" className="hover:underline">
+                <Link href="/education" className="text-white/70 hover:text-primary font-medium transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-2">
+                  <span className="w-1 h-1 bg-white/40 rounded-full"></span>
                   Education
                 </Link>
               </li>
@@ -69,21 +95,27 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contact Us</h4>
-            <div className="space-y-3 text-sm">
-              <p>
-                Email:{' '}
-                <a href="mailto:omarscomandedultd@gmail.com" className="hover:underline">
+            <h4 className="font-black mb-5 uppercase tracking-wide text-sm flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+              Contact Us
+            </h4>
+            <div className="space-y-4 text-sm">
+              <p className="flex items-center gap-3">
+                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-xs">✉️</span>
+                <a href="mailto:omarscomandedultd@gmail.com" className="text-white/70 hover:text-primary font-medium transition-colors truncate">
                   omarscomandedultd@gmail.com
                 </a>
               </p>
-              <p>Phone: +234</p>
-              <div className="flex gap-4 pt-2">
+              <p className="flex items-center gap-3">
+                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-xs">📞</span>
+                <span className="text-white/70 font-medium">+234</span>
+              </p>
+              <div className="flex gap-3 pt-3">
                 <a
                   href="https://www.tiktok.com/@whispersnwords_"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-75 transition-opacity"
+                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-primary/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   aria-label="TikTok"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -94,7 +126,7 @@ export default function Footer() {
                   href="https://www.instagram.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-75 transition-opacity"
+                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-primary/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -107,8 +139,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary-foreground/20 pt-8 text-center text-sm opacity-75">
-          <p>
+        <div className="border-t border-white/10 pt-8 text-center">
+          <p className="text-sm text-white/60 font-medium">
             &copy; {new Date().getFullYear()} O'MARS Communication and Education Promotion Ltd. All rights reserved.
           </p>
         </div>
