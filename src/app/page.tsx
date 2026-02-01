@@ -41,7 +41,7 @@ export default function Home() {
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Our Work</h2>
               <p className="text-foreground/70 max-w-2xl mx-auto">
-                Through education advocacy, student engagement, literacy initiatives, and community projects, we&apos;re creating lasting change.
+                Through education advocacy, student engagement, literacy initiatives, and community projects, we're creating lasting change.
               </p>
             </div>
 
