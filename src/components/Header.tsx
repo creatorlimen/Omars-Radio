@@ -31,7 +31,7 @@ export default function Header() {
 
       <header className="sticky top-0 z-50 bg-secondary border-b-4 border-primary">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center border-4 border-primary">
                 <span className="font-black text-primary text-sm">OM</span>
