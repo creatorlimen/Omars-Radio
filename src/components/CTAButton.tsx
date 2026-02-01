@@ -19,11 +19,11 @@ export default function CTAButton({
   className = '',
 }: CTAButtonProps) {
   const baseStyles =
-    'inline-block px-6 py-3 font-black transition-all duration-300 text-center uppercase tracking-wider text-sm';
+    'inline-flex items-center justify-center gap-2 px-8 py-4 font-black transition-all duration-300 text-center uppercase tracking-wider text-sm rounded-full hover:scale-105 hover:shadow-xl active:scale-100';
 
   const variantStyles = {
-    primary: 'bg-primary text-white hover:bg-primary/90 hover:shadow-lg',
-    secondary: 'bg-secondary text-white hover:bg-secondary/90 border-2 border-primary',
+    primary: 'bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25',
+    secondary: 'bg-white text-primary hover:bg-gray-50 shadow-lg',
     outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
   };
 

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { Radio, Play, Star, Calendar, History, Mic, TrendingUp, TrendingDown, Minus, ArrowRight, Music, Users } from 'lucide-react';
 import AudioPlayer from '@/components/AudioPlayer';
 import CTAButton from '@/components/CTAButton';
 import ShowCard from '@/components/ShowCard';
@@ -85,59 +86,75 @@ export default function Home() {
       </section>
 
       {/* Quick Access Links */}
-      <section className="py-16 bg-background border-t-4 border-primary">
+      <section className="py-20 bg-gradient-to-b from-background to-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-black text-foreground mb-12 text-center uppercase tracking-wide">Quick Access</h2>
+          <h2 className="text-4xl font-black text-foreground mb-4 text-center uppercase tracking-wide">Quick Access</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Everything you need, just one click away</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 href: '/listen-live',
-                icon: '🎙️',
+                icon: Radio,
                 title: 'Listen Live',
                 description: 'Tune in to the live stream now',
+                gradient: 'from-red-500 to-red-600',
               },
               {
                 href: '/now-playing',
-                icon: '▶️',
+                icon: Play,
                 title: 'Now Playing',
-                description: 'See what\'s on air right now',
+                description: "See what's on air right now",
+                gradient: 'from-orange-500 to-orange-600',
               },
               {
                 href: '/top-shows',
-                icon: '⭐',
+                icon: Star,
                 title: 'Top Shows',
                 description: 'Explore our flagship programmes',
+                gradient: 'from-amber-500 to-amber-600',
               },
               {
                 href: '/schedule',
-                icon: '📅',
+                icon: Calendar,
                 title: 'Schedule',
                 description: 'View the full weekly schedule',
+                gradient: 'from-emerald-500 to-emerald-600',
               },
               {
                 href: '/listen-again',
-                icon: '⏮️',
+                icon: History,
                 title: 'Listen Again',
                 description: 'Browse past programmes',
+                gradient: 'from-blue-500 to-blue-600',
               },
               {
                 href: '/oaps',
-                icon: '🎤',
+                icon: Mic,
                 title: 'Our Presenters',
-                description: 'Meet the O\'MARS Radio team',
+                description: "Meet the O'MARS Radio team",
+                gradient: 'from-purple-500 to-purple-600',
               },
             ].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative p-6 bg-white border-2 border-gray-200 hover:border-primary hover:shadow-xl transition-all duration-300"
+                className="group relative p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden"
               >
-                <div className="text-5xl mb-4">{item.icon}</div>
+                {/* Decorative gradient corner */}
+                <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${item.gradient} opacity-5 rounded-bl-full transition-all duration-300 group-hover:opacity-10 group-hover:w-32 group-hover:h-32`} />
+                
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <item.icon className="w-7 h-7 text-white" strokeWidth={2} />
+                </div>
                 <h3 className="text-lg font-black text-foreground group-hover:text-primary transition-colors uppercase">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-600 mt-2 font-medium">{item.description}</p>
+                <div className="mt-4 flex items-center text-primary font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span>Explore</span>
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </div>
               </Link>
             ))}
           </div>
@@ -145,12 +162,18 @@ export default function Home() {
       </section>
 
       {/* Top Shows Preview */}
-      <section className="py-16 bg-gray-50 border-t-4 border-primary">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">⭐ Featured Shows</h2>
-            <Link href="/top-shows" className="text-primary font-bold hover:underline uppercase text-sm">
-              View All Shows →
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-lg">
+                <Star className="w-6 h-6 text-white" />
+              </div>
+              <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">Featured Shows</h2>
+            </div>
+            <Link href="/top-shows" className="group flex items-center gap-2 text-primary font-bold uppercase text-sm hover:gap-3 transition-all">
+              View All Shows
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -172,35 +195,41 @@ export default function Home() {
       </section>
 
       {/* Top Music Chart */}
-      <section className="py-16 bg-background border-t-4 border-primary">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">🎵 Top Music</h2>
-            <Link href="/top-music" className="text-primary font-bold hover:underline uppercase text-sm">
-              Full Chart →
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-lg">
+                <Music className="w-6 h-6 text-white" />
+              </div>
+              <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">Top Music</h2>
+            </div>
+            <Link href="/top-music" className="group flex items-center gap-2 text-primary font-bold uppercase text-sm hover:gap-3 transition-all">
+              Full Chart
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="bg-white border-2 border-gray-200 shadow-lg">
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden">
             {topMusic.map((track, index) => (
               <div
                 key={track.rank}
-                className={`flex items-center justify-between p-4 ${
-                  index !== topMusic.length - 1 ? 'border-b border-gray-200' : ''
+                className={`flex items-center justify-between p-5 hover:bg-gray-50 transition-colors ${
+                  index !== topMusic.length - 1 ? 'border-b border-gray-100' : ''
                 }`}
               >
                 <div className="flex items-center gap-4">
-                  <span className="text-2xl font-black text-primary w-8">{track.rank}</span>
+                  <span className="text-2xl font-black text-primary w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">{track.rank}</span>
                   <div>
                     <h3 className="font-bold text-foreground">{track.title}</h3>
                     <p className="text-sm text-gray-600">{track.artist}</p>
                   </div>
                 </div>
-                <span className="text-2xl">
-                  {track.trend === 'up' && '📈'}
-                  {track.trend === 'down' && '📉'}
-                  {track.trend === 'steady' && '➡️'}
-                </span>
+                <div className="flex items-center gap-2">
+                  {track.trend === 'up' && <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center"><TrendingUp className="w-4 h-4 text-emerald-600" /></div>}
+                  {track.trend === 'down' && <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center"><TrendingDown className="w-4 h-4 text-red-600" /></div>}
+                  {track.trend === 'steady' && <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"><Minus className="w-4 h-4 text-gray-600" /></div>}
+                </div>
               </div>
             ))}
           </div>
@@ -208,49 +237,55 @@ export default function Home() {
       </section>
 
       {/* About Preview */}
-      <section className="py-16 bg-background border-t-4 border-primary">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <h2 className="text-4xl font-black text-foreground mb-6 uppercase tracking-wide">Who We Are</h2>
+          <h2 className="text-4xl font-black text-foreground mb-6 uppercase tracking-wide text-center">Who We Are</h2>
 
-          <div className="space-y-6">
-            <p className="text-lg text-gray-700 leading-relaxed font-medium">
+          <div className="space-y-8">
+            <p className="text-lg text-gray-600 leading-relaxed font-medium text-center">
               O'MARS Radio is a digital radio dissemination platform created to inform, educate, and connect audiences
               through responsible broadcasting. We exist to give structure and voice to conversations around news,
               education, culture and identity, social issues, and global development, particularly as they affect
               African societies and the diaspora.
             </p>
 
-            <div className="bg-primary border-l-8 border-primary p-6">
-              <h3 className="font-black text-white mb-2 uppercase tracking-wide">Our Mission</h3>
-              <p className="text-white/95 font-medium">
+            <div className="bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 shadow-xl">
+              <h3 className="font-black text-white mb-3 uppercase tracking-wide text-lg">Our Mission</h3>
+              <p className="text-white/95 font-medium leading-relaxed">
                 To deliver credible information, educational content, and culturally grounded programming that
                 strengthens awareness, identity, and informed participation in society.
               </p>
             </div>
 
-            <CTAButton href="/about" className="w-full md:w-auto">
-              Learn More About Us
-            </CTAButton>
+            <div className="text-center">
+              <CTAButton href="/about" variant="outline">
+                Learn More About Us
+              </CTAButton>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Featured Categories */}
-      <section className="py-16 bg-gray-100">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-black text-foreground mb-12 text-center uppercase tracking-wide">What We Broadcast</h2>
+          <h2 className="text-4xl font-black text-foreground mb-4 text-center uppercase tracking-wide">What We Broadcast</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Diverse content that informs, educates, and entertains</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'News & Current Affairs', description: 'Daily analysis and balanced reporting' },
-              { title: 'Education & Learning', description: 'Communication and youth development' },
-              { title: 'Culture & Identity', description: 'African narratives and perspectives' },
-              { title: 'Social Issues', description: 'Conversations on society and development' },
-              { title: 'Music & Entertainment', description: 'Curated content and lifestyle' },
-              { title: 'Global Development', description: 'International issues in local context' },
+              { title: 'News & Current Affairs', description: 'Daily analysis and balanced reporting', icon: '📰' },
+              { title: 'Education & Learning', description: 'Communication and youth development', icon: '📚' },
+              { title: 'Culture & Identity', description: 'African narratives and perspectives', icon: '🌍' },
+              { title: 'Social Issues', description: 'Conversations on society and development', icon: '💬' },
+              { title: 'Music & Entertainment', description: 'Curated content and lifestyle', icon: '🎵' },
+              { title: 'Global Development', description: 'International issues in local context', icon: '🌐' },
             ].map((item) => (
-              <div key={item.title} className="p-6 bg-white border-2 border-gray-200 hover:border-primary hover:shadow-lg transition-all">
-                <h3 className="font-black text-foreground mb-2 uppercase text-sm tracking-wide">{item.title}</h3>
+              <div key={item.title} className="group p-6 bg-white rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h3 className="font-black text-foreground mb-2 uppercase text-sm tracking-wide group-hover:text-primary transition-colors">{item.title}</h3>
                 <p className="text-sm text-gray-600 font-medium">{item.description}</p>
               </div>
             ))}
@@ -260,17 +295,23 @@ export default function Home() {
 
       {/* Today's Schedule */}
       {todaySchedule && (
-        <section className="py-16 bg-gray-50 border-t-4 border-primary">
+        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="flex justify-between items-center mb-12">
-              <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">📅 Today's Schedule</h2>
-              <Link href="/schedule" className="text-primary font-bold hover:underline uppercase text-sm">
-                Full Schedule →
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg">
+                  <Calendar className="w-6 h-6 text-white" />
+                </div>
+                <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">Today's Schedule</h2>
+              </div>
+              <Link href="/schedule" className="group flex items-center gap-2 text-primary font-bold uppercase text-sm hover:gap-3 transition-all">
+                Full Schedule
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="bg-white border-2 border-gray-200 shadow-lg">
-              <div className="bg-primary text-white p-4">
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden">
+              <div className="bg-gradient-to-r from-primary to-primary/80 text-white p-5">
                 <h3 className="text-xl font-black uppercase">{todaySchedule.day}</h3>
               </div>
               <div className="divide-y divide-gray-200">
@@ -309,12 +350,18 @@ export default function Home() {
       )}
 
       {/* Featured Presenters */}
-      <section className="py-16 bg-background border-t-4 border-primary">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">🎤 Meet Our Presenters</h2>
-            <Link href="/oaps" className="text-primary font-bold hover:underline uppercase text-sm">
-              View All Presenters →
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">Meet Our Presenters</h2>
+            </div>
+            <Link href="/oaps" className="group flex items-center gap-2 text-primary font-bold uppercase text-sm hover:gap-3 transition-all">
+              View All Presenters
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -335,10 +382,16 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white border-b-4 border-primary/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl">
-          <h2 className="text-4xl font-black mb-4 uppercase tracking-wide">Ready to Listen?</h2>
-          <p className="text-lg text-white/95 mb-8 font-semibold">Join thousands of listeners discovering trusted, relevant, and engaging radio content.</p>
+      <section className="py-24 bg-gradient-to-r from-primary via-primary to-primary/90 text-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl relative z-10">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 uppercase tracking-wide">Ready to Listen?</h2>
+          <p className="text-lg text-white/90 mb-10 font-medium">Join thousands of listeners discovering trusted, relevant, and engaging radio content.</p>
           <CTAButton href="/listen-live" variant="secondary">
             ▶ Tune In Now
           </CTAButton>
