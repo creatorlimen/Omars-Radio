@@ -1,72 +1,67 @@
-'use client';
-
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Mail, Phone } from 'lucide-react';
 
-export function Footer() {
-  const currentYear = new Date().getFullYear();
-
+export default function Footer() {
   return (
-    <footer className="bg-[#0B5457] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-[#0B5457] font-bold text-xl">O</span>
-              </div>
-              <span className="font-bold text-xl">Omars</span>
-            </div>
-            <p className="text-sm text-white/90">
-              Promoting Education. Amplifying Voices. Driving Impact.
+    <footer className="bg-secondary text-white mt-20 border-t-4 border-primary">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* About */}
+          <div>
+            <h3 className="font-black text-lg mb-4 uppercase tracking-wide">O'MARS RADIO</h3>
+            <p className="text-sm font-medium text-white/90">
+              Voices. Identity. Perspective. A digital radio platform for African and diaspora audiences.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-3 text-sm text-white/90">
+            <h4 className="font-black mb-4 uppercase tracking-wide text-sm">Quick Links</h4>
+            <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/" className="text-white/80 hover:text-primary font-medium transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-white/80 hover:text-primary font-medium transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/programs" className="hover:text-white transition-colors">
-                  Programs
+                <Link href="/listen-live" className="text-white/80 hover:text-primary font-medium transition-colors">
+                  Listen Live
                 </Link>
               </li>
               <li>
-                <Link href="/outreach" className="hover:text-white transition-colors">
-                  Outreach & Advocacy
-                </Link>
-              </li>
-              <li>
-                <Link href="/partnerships" className="hover:text-white transition-colors">
-                  Partnerships
+                <Link href="/top-shows" className="text-white/80 hover:text-primary font-medium transition-colors">
+                  Top Shows
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Programs */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Resources</h3>
-            <ul className="space-y-3 text-sm text-white/90">
+            <h4 className="font-black mb-4 uppercase tracking-wide text-sm">Programs</h4>
+            <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/publications" className="hover:text-white transition-colors">
-                  Publications
+                <Link href="/schedule" className="text-white/80 hover:text-primary font-medium transition-colors">
+                  Schedule
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="hover:text-white transition-colors">
-                  Gallery
+                <Link href="/listen-again" className="text-white/80 hover:text-primary font-medium transition-colors">
+                  Listen Again
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Get Involved
+                <Link href="/oaps" className="text-white/80 hover:text-primary font-medium transition-colors">
+                  Our Presenters
+                </Link>
+              </li>
+              <li>
+                <Link href="/education" className="hover:underline">
+                  Education
                 </Link>
               </li>
             </ul>
@@ -74,58 +69,48 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Contact</h3>
-            <div className="space-y-3 text-sm text-white/90">
-              <div className="flex items-start gap-3">
-                <Mail size={18} className="mt-0.5 flex-shrink-0" />
-                <a href="mailto:omarscomandedultd@gmail.com" className="hover:text-white transition-colors">
+            <h4 className="font-semibold mb-4">Contact Us</h4>
+            <div className="space-y-3 text-sm">
+              <p>
+                Email:{' '}
+                <a href="mailto:omarscomandedultd@gmail.com" className="hover:underline">
                   omarscomandedultd@gmail.com
                 </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone size={18} />
-                <span>+234</span>
+              </p>
+              <p>Phone: +234</p>
+              <div className="flex gap-4 pt-2">
+                <a
+                  href="https://www.tiktok.com/@whispersnwords_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-75 transition-opacity"
+                  aria-label="TikTok"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.1 1.82 2.89 2.89 0 0 1 2.31-4.64 2.86 2.86 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-.01-.01z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-75 transition-opacity"
+                  aria-label="Instagram"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="border-t border-white/20 pt-8">
-          <div className="flex items-center justify-between flex-col sm:flex-row gap-4">
-            <div className="flex gap-4">
-              <a
-                href="https://facebook.com/omarseducation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="https://twitter.com/omarseducation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="https://instagram.com/omarseducation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-            </div>
-            <p className="text-sm text-white/80">
-              © {currentYear} Omars Communication and Education Limited. All rights reserved.
-            </p>
-          </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-secondary-foreground/20 pt-8 text-center text-sm opacity-75">
+          <p>
+            &copy; {new Date().getFullYear()} O'MARS Communication and Education Promotion Ltd. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

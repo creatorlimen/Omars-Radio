@@ -1,274 +1,138 @@
-'use client';
+import Link from 'next/link';
+import { Card } from '@/components/ui/card';
+import CTAButton from '@/components/CTAButton';
 
-import React from "react"
-
-import { Navigation } from '@/components/navigation';
-import { Footer } from '@/components/footer';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
-import { useState } from 'react';
+export const metadata = {
+  title: 'Contact Us - O\'MARS Radio',
+  description: 'Get in touch with O\'MARS Radio for inquiries, partnerships, and feedback.',
+};
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the form data to a server or API
-    alert('Thank you for reaching out! We will get back to you soon.');
-    setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
-  };
-
-  const contactMethods = [
-    {
-      icon: Mail,
-      title: 'Email',
-      value: 'omarscomandedultd@gmail.com',
-      link: 'mailto:omarscomandedultd@gmail.com',
-    },
-    {
-      icon: Phone,
-      title: 'Phone',
-      value: '+234',
-      link: 'tel:+234',
-    },
-  ];
-
-  const socialLinks = [
-    {
-      name: 'Facebook',
-      icon: Facebook,
-      url: 'https://facebook.com/omarseducation',
-      label: '@omarseducation',
-    },
-    {
-      name: 'Twitter',
-      icon: Twitter,
-      url: 'https://twitter.com/omarseducation',
-      label: '@omarseducation',
-    },
-    {
-      name: 'Instagram',
-      icon: Instagram,
-      url: 'https://instagram.com/omarseducation',
-      label: '@omarseducation',
-    },
-  ];
-
-  const reasons = [
-    'Join our programs',
-    'Submit an entry for Whispers and Words',
-    'Sponsor an initiative',
-    'Partner with us',
-    'Share feedback',
-    'Volunteer',
-  ];
-
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen">
-        {/* Hero */}
-        <section className="bg-gradient-to-b from-primary/5 to-background py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance mb-6 text-primary">
-                Contact & Get Involved
-              </h1>
-              <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-                Join us in transforming education. We&apos;re excited to hear from you and explore how we can work together.
-              </p>
-            </div>
-          </div>
-        </section>
+    <div>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-primary to-primary/80 text-white py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
+          <p className="text-lg text-white/90">We'd love to hear from you</p>
+        </div>
+      </section>
 
-        {/* Contact Information */}
-        <section className="py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-primary mb-12 text-center">Ways to Reach Us</h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-12">
-              {contactMethods.map((method) => {
-                const Icon = method.icon;
-                return (
-                  <a
-                    key={method.title}
-                    href={method.link}
-                    className="bg-card rounded-lg p-8 border border-border hover:shadow-lg transition-shadow"
-                  >
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="text-primary" size={24} />
-                    </div>
-                    <h3 className="font-semibold text-primary mb-2">{method.title}</h3>
-                    <p className="text-foreground/70">{method.value}</p>
-                  </a>
-                );
-              })}
-            </div>
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold text-foreground mb-8">Contact Information</h2>
+              </div>
 
-            {/* Social Media */}
-            <div className="text-center mb-12">
-              <h3 className="text-lg font-semibold text-primary mb-6">Follow Us</h3>
-              <div className="flex justify-center gap-4">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
+              <Card className="p-6 hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-foreground mb-3">Email</h3>
+                <a href="mailto:omarscomandedultd@gmail.com" className="text-primary hover:underline text-lg">
+                  omarscomandedultd@gmail.com
+                </a>
+                <p className="text-xs text-muted-foreground mt-2">We respond within 24-48 hours</p>
+              </Card>
+
+              <Card className="p-6 hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-foreground mb-3">Phone</h3>
+                <p className="text-lg text-foreground">+234 (placeholder)</p>
+                <p className="text-xs text-muted-foreground mt-2">Available during business hours</p>
+              </Card>
+
+              <Card className="p-6 hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-foreground mb-4">Follow Us</h3>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">TikTok</p>
                     <a
-                      key={social.name}
-                      href={social.url}
+                      href="https://www.tiktok.com/@whispersnwords_"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-card rounded-lg border border-border hover:bg-primary/5 transition-colors"
-                      title={social.name}
+                      className="text-primary hover:underline break-all text-sm"
                     >
-                      <Icon size={20} className="text-primary" />
-                      <span className="text-sm font-medium text-foreground">{social.label}</span>
+                      @whispersnwords_
                     </a>
-                  );
-                })}
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Instagram</p>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm">
+                      @oarsradio
+                    </a>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Purpose Categories */}
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Reason for Contacting</h2>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    title: 'Reach Out Today',
+                    description: 'General inquiries and feedback',
+                    email: 'omarscomandedultd@gmail.com',
+                  },
+                  {
+                    title: 'Partner With Us',
+                    description: 'Advertising, sponsorships, and collaborations',
+                    email: 'omarscomandedultd@gmail.com',
+                  },
+                  {
+                    title: 'Join Our Programs',
+                    description: 'Apply to be a presenter, contribute content, or participate',
+                    email: 'omarscomandedultd@gmail.com',
+                  },
+                ].map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={`mailto:${item.email}?subject=${encodeURIComponent(item.title)}`}
+                    className="block p-4 border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all"
+                  >
+                    <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <p className="text-xs text-primary font-semibold mt-2">Send Email →</p>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
-        </section>
 
-        {/* Contact Form */}
-        <section className="bg-primary/5 py-16 sm:py-24">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-card rounded-lg border border-border p-8 sm:p-12">
-              <h2 className="text-3xl font-bold text-primary mb-2 text-center">Send Us a Message</h2>
-              <p className="text-foreground/70 text-center mb-8">
-                Fill out the form below and we&apos;ll get back to you as soon as possible.
+          {/* Additional Information */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div className="p-6 bg-secondary/30 rounded-lg border border-border">
+              <h3 className="font-bold text-foreground mb-2">Response Time</h3>
+              <p className="text-sm text-muted-foreground">We typically respond to inquiries within 24-48 hours during business days.</p>
+            </div>
+
+            <div className="p-6 bg-secondary/30 rounded-lg border border-border">
+              <h3 className="font-bold text-foreground mb-2">Rate Card Requests</h3>
+              <p className="text-sm text-muted-foreground">
+                For advertising and partnership rates,{' '}
+                <Link href="/rate-card" className="text-primary hover:underline">
+                  visit our Rate Card page
+                </Link>
+                .
               </p>
+            </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-primary mb-2">
-                      First Name *
-                    </label>
-                    <Input
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
-                      placeholder="Enter your first name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-primary mb-2">
-                      Last Name *
-                    </label>
-                    <Input
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      required
-                      placeholder="Enter your last name"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-                    Email *
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="Enter your email"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
-                    Phone (Optional)
-                  </label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Enter your phone number"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
-                    Message *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    placeholder="Tell us how we can help or how you'd like to get involved..."
-                    className="min-h-32"
-                  />
-                </div>
-
-                <Button type="submit" size="lg" className="w-full">
-                  Send Message
-                </Button>
-              </form>
+            <div className="p-6 bg-secondary/30 rounded-lg border border-border">
+              <h3 className="font-bold text-foreground mb-2">Office</h3>
+              <p className="text-sm text-muted-foreground">O'MARS Communication and Education Promotion Ltd.</p>
             </div>
           </div>
-        </section>
 
-        {/* Ways to Get Involved */}
-        <section className="py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-primary mb-12 text-center">Ways to Get Involved</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {reasons.map((reason) => (
-                <div key={reason} className="bg-card rounded-lg p-6 border border-border text-center hover:shadow-lg transition-shadow">
-                  <p className="font-semibold text-primary">{reason}</p>
-                </div>
-              ))}
-            </div>
+          {/* CTA */}
+          <div className="text-center py-8 space-y-6 p-8 bg-primary/10 rounded-lg border border-primary">
+            <h3 className="text-2xl font-bold text-foreground">Ready to Connect?</h3>
+            <p className="text-muted-foreground">Choose one of the options above to get started, or call us directly at +234.</p>
+            <CTAButton href="mailto:omarscomandedultd@gmail.com">Send Email Now</CTAButton>
           </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="bg-primary text-primary-foreground py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Ready to Make a Difference?
-            </h2>
-            <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
-              Your involvement matters. Whether as a student, educator, partner, or sponsor, you can help us transform education and amplify young voices.
-            </p>
-            <a href="#" onClick={() => document.getElementById('message')?.scrollIntoView({ behavior: 'smooth' })}>
-              <Button size="lg" variant="secondary">
-                Get in Touch
-              </Button>
-            </a>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+        </div>
+      </section>
+    </div>
   );
 }

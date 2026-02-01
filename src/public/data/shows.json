@@ -1,0 +1,82 @@
+[
+  {
+    "id": "morning-brief",
+    "title": "Morning Brief",
+    "description": "Daily news and analysis with context and clarity.",
+    "category": "News",
+    "day": "Monday - Friday",
+    "time": "08:00",
+    "language": "English",
+    "hostIds": ["aisha-bello"]
+  },
+  {
+    "id": "education-today",
+    "title": "Education Today",
+    "description": "Communication and language development for youth and students.",
+    "category": "Education",
+    "day": "Tuesday - Thursday",
+    "time": "10:00",
+    "language": "English",
+    "hostIds": ["chioma-okonkwo"]
+  },
+  {
+    "id": "voices-of-identity",
+    "title": "Voices of Identity",
+    "description": "Exploring culture, identity, and African narratives.",
+    "category": "Culture & Identity",
+    "day": "Sunday",
+    "time": "15:00",
+    "language": "English",
+    "hostIds": ["aisha-bello"]
+  },
+  {
+    "id": "social-conversations",
+    "title": "Social Conversations",
+    "description": "Discussing social issues affecting African societies and the diaspora.",
+    "category": "Social Issues",
+    "day": "Wednesday - Friday",
+    "time": "16:30",
+    "language": "Yoruba",
+    "hostIds": ["david-adeyemi"]
+  },
+  {
+    "id": "global-perspectives",
+    "title": "Global Perspectives",
+    "description": "Translating UN and global development issues into conversations.",
+    "category": "Global Development",
+    "day": "Monday - Wednesday",
+    "time": "18:00",
+    "language": "English",
+    "hostIds": ["chioma-okonkwo"]
+  },
+  {
+    "id": "evening-groove",
+    "title": "Evening Groove",
+    "description": "Music and entertainment for your evening.",
+    "category": "Entertainment & Lifestyle",
+    "day": "Monday - Saturday",
+    "time": "19:00",
+    "language": "English",
+    "hostIds": ["korede-williams"]
+  },
+  {
+    "id": "sports-arena",
+    "title": "Sports Arena",
+    "description": "Sports news, analysis, and fan conversations.",
+    "category": "Sports",
+    "day": "Saturday - Sunday",
+    "time": "20:30",
+    "language": "English",
+    "hostIds": ["david-adeyemi"]
+  },
+  {
+    "id": "night-reflections",
+    "title": "Night Reflections",
+    "description": "Cultural and identity-based narratives under the stars.",
+    "category": "Culture & Identity",
+    "day": "Thursday - Sunday",
+    "time": "21:30",
+    "language": "English",
+    "hostIds": ["aisha-bello"]
+  }
+]
