@@ -42,7 +42,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1 ml-auto mr-1">
+            <div className="hidden lg:flex items-center gap-1 ml-auto">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -54,8 +54,8 @@ export default function Header() {
               ))}
             </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden ml-auto">
+            {/* Mobile Menu Button */}
+            <div className="flex items-center lg:hidden ml-auto">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-white"
