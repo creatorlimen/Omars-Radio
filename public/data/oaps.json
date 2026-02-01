@@ -1,0 +1,34 @@
+[
+  {
+    "id": "aisha-bello",
+    "name": "Aisha Bello",
+    "photo": "/images/oaps/aisha-bello.jpg",
+    "bio": "Broadcast journalist and cultural commentator with over 10 years of experience.",
+    "shows": ["morning-brief", "voices-of-identity"],
+    "focusAreas": ["Culture", "Identity", "Public Discourse"]
+  },
+  {
+    "id": "chioma-okonkwo",
+    "name": "Chioma Okonkwo",
+    "photo": "/images/oaps/chioma-okonkwo.jpg",
+    "bio": "Education specialist and youth development advocate.",
+    "shows": ["education-today", "global-perspectives"],
+    "focusAreas": ["Education", "Youth Development", "Global Affairs"]
+  },
+  {
+    "id": "david-adeyemi",
+    "name": "David Adeyemi",
+    "photo": "/images/oaps/david-adeyemi.jpg",
+    "bio": "Sports analyst and social commentator passionate about African narratives.",
+    "shows": ["social-conversations", "sports-arena"],
+    "focusAreas": ["Sports", "Social Issues", "Community"]
+  },
+  {
+    "id": "korede-williams",
+    "name": "Korede Williams",
+    "photo": "/images/oaps/korede-williams.jpg",
+    "bio": "Music curator and entertainment host with a pulse on African culture.",
+    "shows": ["evening-groove"],
+    "focusAreas": ["Music", "Entertainment", "Culture"]
+  }
+]

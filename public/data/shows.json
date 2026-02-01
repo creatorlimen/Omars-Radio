@@ -1,0 +1,32 @@
+[
+  {
+    "id": "voices-of-identity",
+    "title": "Voices of Identity",
+    "description": "Exploring culture, identity, and African narratives.",
+    "category": "Culture & Identity",
+    "day": "Sunday",
+    "time": "15:00",
+    "language": "English",
+    "hostIds": ["aisha-bello"]
+  },
+  {
+    "id": "morning-brief",
+    "title": "Morning Brief",
+    "description": "Daily news and analysis with context and clarity.",
+    "category": "News",
+    "day": "Monday",
+    "time": "08:00",
+    "language": "English",
+    "hostIds": ["aisha-bello"]
+  },
+  {
+    "id": "education-today",
+    "title": "Education Today",
+    "description": "Communication and language development for youth and students.",
+    "category": "Education",
+    "day": "Tuesday",
+    "time": "10:00",
+    "language": "English",
+    "hostIds": ["chioma-okonkwo"]
+  }
+]

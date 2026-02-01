@@ -1,0 +1,32 @@
+[
+  {
+    "rank": 1,
+    "title": "City Lights",
+    "artist": "Ade Wave",
+    "trend": "up"
+  },
+  {
+    "rank": 2,
+    "title": "African Dream",
+    "artist": "Ngozi Star",
+    "trend": "steady"
+  },
+  {
+    "rank": 3,
+    "title": "Lagos Nights",
+    "artist": "Kunle Jay",
+    "trend": "down"
+  },
+  {
+    "rank": 4,
+    "title": "Homeland",
+    "artist": "Ife Sound",
+    "trend": "up"
+  },
+  {
+    "rank": 5,
+    "title": "Diaspora",
+    "artist": "Amara Voice",
+    "trend": "steady"
+  }
+]

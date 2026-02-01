@@ -48,7 +48,11 @@ export default function AudioPlayer({ streamUrl = '', title = 'O\'MARS Radio Liv
 
   return (
     <div className="w-full bg-gradient-to-r from-primary via-primary/95 to-primary/80 p-8 text-white shadow-xl border-2 border-primary/50">
-      <audio ref={audioRef} src={streamUrl} crossOrigin="anonymous" />
+      {streamUrl ? (
+        <audio ref={audioRef} src={streamUrl} crossOrigin="anonymous" />
+      ) : (
+        <audio ref={audioRef} crossOrigin="anonymous" />
+      )}
 
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
