@@ -1,14 +1,50 @@
+'use client';
+
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import AudioPlayer from '@/components/AudioPlayer';
 import CTAButton from '@/components/CTAButton';
-
-export const metadata = {
-  title: 'O\'MARS Radio - Voices. Identity. Perspective.',
-  description:
-    'A 24-hour digital radio platform broadcasting news, education, culture, music, and social conversations for African and diaspora audiences.',
-};
+import ShowCard from '@/components/ShowCard';
+import OAPCard from '@/components/OAPCard';
+import type { Program, Show, MusicTrack, OAP, ScheduleDay } from '@/lib/types';
 
 export default function Home() {
+  const [currentProgram, setCurrentProgram] = useState<Program | null>(null);
+  const [topShows, setTopShows] = useState<Show[]>([]);
+  const [topMusic, setTopMusic] = useState<MusicTrack[]>([]);
+  const [featuredOAPs, setFeaturedOAPs] = useState<OAP[]>([]);
+  const [todaySchedule, setTodaySchedule] = useState<ScheduleDay | null>(null);
+  const [programs, setPrograms] = useState<Record<string, { title: string; category: string }>>({});
+
+  useEffect(() => {
+    // Fetch all data
+    Promise.all([
+      fetch('/data/programs.json').then(res => res.json()),
+      fetch('/data/shows.json').then(res => res.json()),
+      fetch('/data/music-chart.json').then(res => res.json()),
+      fetch('/data/oaps.json').then(res => res.json()),
+      fetch('/data/schedule.json').then(res => res.json()),
+    ]).then(([programs, shows, music, oaps, schedule]) => {
+      setCurrentProgram(programs.find((p: Program) => p.isLive) || null);
+      setTopShows(shows.slice(0, 3));
+      setTopMusic(music.slice(0, 5));
+      setFeaturedOAPs(oaps.slice(0, 4));
+      
+      // Get today's schedule
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const today = days[new Date().getDay()];
+      const todayData = schedule.find((s: ScheduleDay) => s.day === today);
+      setTodaySchedule(todayData || null);
+      
+      // Create programs lookup
+      const programsMap: Record<string, { title: string; category: string }> = {};
+      programs.forEach((p: Program) => {
+        programsMap[p.id] = { title: p.title, category: p.category };
+      });
+      setPrograms(programsMap);
+    }).catch(error => console.error('Error loading data:', error));
+  }, []);
+
   return (
     <div>
       {/* Hero Section */}
@@ -108,6 +144,69 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Top Shows Preview */}
+      <section className="py-16 bg-gray-50 border-t-4 border-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-12">
+            <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">⭐ Featured Shows</h2>
+            <Link href="/top-shows" className="text-primary font-bold hover:underline uppercase text-sm">
+              View All Shows →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {topShows.map((show) => (
+              <ShowCard
+                key={show.id}
+                id={show.id}
+                title={show.title}
+                description={show.description}
+                category={show.category}
+                day={show.day}
+                time={show.time}
+                language={show.language}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Top Music Chart */}
+      <section className="py-16 bg-background border-t-4 border-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <div className="flex justify-between items-center mb-12">
+            <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">🎵 Top Music</h2>
+            <Link href="/top-music" className="text-primary font-bold hover:underline uppercase text-sm">
+              Full Chart →
+            </Link>
+          </div>
+
+          <div className="bg-white border-2 border-gray-200 shadow-lg">
+            {topMusic.map((track, index) => (
+              <div
+                key={track.rank}
+                className={`flex items-center justify-between p-4 ${
+                  index !== topMusic.length - 1 ? 'border-b border-gray-200' : ''
+                }`}
+              >
+                <div className="flex items-center gap-4">
+                  <span className="text-2xl font-black text-primary w-8">{track.rank}</span>
+                  <div>
+                    <h3 className="font-bold text-foreground">{track.title}</h3>
+                    <p className="text-sm text-gray-600">{track.artist}</p>
+                  </div>
+                </div>
+                <span className="text-2xl">
+                  {track.trend === 'up' && '📈'}
+                  {track.trend === 'down' && '📉'}
+                  {track.trend === 'steady' && '➡️'}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About Preview */}
       <section className="py-16 bg-background border-t-4 border-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -154,6 +253,82 @@ export default function Home() {
                 <h3 className="font-black text-foreground mb-2 uppercase text-sm tracking-wide">{item.title}</h3>
                 <p className="text-sm text-gray-600 font-medium">{item.description}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Today's Schedule */}
+      {todaySchedule && (
+        <section className="py-16 bg-gray-50 border-t-4 border-primary">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="flex justify-between items-center mb-12">
+              <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">📅 Today's Schedule</h2>
+              <Link href="/schedule" className="text-primary font-bold hover:underline uppercase text-sm">
+                Full Schedule →
+              </Link>
+            </div>
+
+            <div className="bg-white border-2 border-gray-200 shadow-lg">
+              <div className="bg-primary text-white p-4">
+                <h3 className="text-xl font-black uppercase">{todaySchedule.day}</h3>
+              </div>
+              <div className="divide-y divide-gray-200">
+                {todaySchedule.slots.map((slot, index) => {
+                  const program = programs[slot.programId];
+                  return (
+                    <div key={index} className="p-4 hover:bg-gray-50 transition-colors">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-black text-primary text-lg">
+                              {slot.startTime} - {slot.endTime}
+                            </span>
+                            {slot.isRepeat && (
+                              <span className="px-2 py-0.5 bg-gray-200 text-gray-700 rounded text-xs font-bold uppercase">
+                                Repeat
+                              </span>
+                            )}
+                          </div>
+                          <h4 className="font-bold text-foreground text-lg">{program?.title || slot.programId}</h4>
+                          {program?.category && (
+                            <span className="inline-block mt-2 px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded uppercase">
+                              {program.category}
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-sm font-bold text-gray-600">🗣️ {slot.language}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Featured Presenters */}
+      <section className="py-16 bg-background border-t-4 border-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-12">
+            <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">🎤 Meet Our Presenters</h2>
+            <Link href="/oaps" className="text-primary font-bold hover:underline uppercase text-sm">
+              View All Presenters →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredOAPs.map((oap) => (
+              <OAPCard
+                key={oap.id}
+                id={oap.id}
+                name={oap.name}
+                photo={oap.photo}
+                bio={oap.bio}
+                shows={oap.shows}
+                focusAreas={oap.focusAreas}
+              />
             ))}
           </div>
         </div>

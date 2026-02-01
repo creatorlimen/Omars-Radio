@@ -31,18 +31,18 @@ export default function Header() {
 
       <header className="sticky top-0 z-50 bg-secondary border-b-4 border-primary">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex justify-between items-center">
+          <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center border-4 border-primary">
                 <span className="font-black text-primary text-sm">OM</span>
               </div>
               <div className="hidden sm:block">
                 <div className="font-black text-lg text-white tracking-tight">O'MARS RADIO</div>
-                </div>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-1 ml-auto mr-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -55,7 +55,7 @@ export default function Header() {
             </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden">
+          <div className="flex items-center lg:hidden ml-auto">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-white"
