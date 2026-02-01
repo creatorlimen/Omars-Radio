@@ -28,5 +28,35 @@
     "title": "Diaspora",
     "artist": "Amara Voice",
     "trend": "steady"
+  },
+  {
+    "rank": 6,
+    "title": "Rhythm of the Sahara",
+    "artist": "Zara & The Nomads",
+    "trend": "up"
+  },
+  {
+    "rank": 7,
+    "title": "Ancestral Echoes",
+    "artist": "Kofi Dreams",
+    "trend": "up"
+  },
+  {
+    "rank": 8,
+    "title": "Urban Pulse",
+    "artist": "Afro Fusion Collective",
+    "trend": "down"
+  },
+  {
+    "rank": 9,
+    "title": "River of Memories",
+    "artist": "Ayo Melodie",
+    "trend": "steady"
+  },
+  {
+    "rank": 10,
+    "title": "Tomorrow's Hope",
+    "artist": "Unity Band",
+    "trend": "up"
   }
 ]
