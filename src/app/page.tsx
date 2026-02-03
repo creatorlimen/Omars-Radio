@@ -59,7 +59,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-balance tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-balance tracking-tight break-words">
               VOICES. IDENTITY. PERSPECTIVE.
             </h1>
             <p className="text-lg md:text-xl text-white/95 mb-10 text-balance font-semibold">

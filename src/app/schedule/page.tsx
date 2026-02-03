@@ -54,7 +54,7 @@ export default function Schedule() {
               <Calendar className="w-4 h-4" />
               Weekly Programming
             </div>
-            <h1 className="text-5xl md:text-6xl font-black mb-6 uppercase tracking-tight">Programme Schedule</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 uppercase tracking-tight break-words">Programme Schedule</h1>
             <p className="text-xl text-white/90 font-medium">Full weekly schedule for O'MARS Radio — your guide to quality programming</p>
           </div>
         </div>

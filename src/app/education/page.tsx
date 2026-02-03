@@ -53,7 +53,7 @@ export default function Education() {
               <BookOpen className="w-4 h-4" />
               Learning That Matters
             </div>
-            <h1 className="text-5xl md:text-6xl font-black mb-6 uppercase tracking-tight">Education & Learning</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 uppercase tracking-tight break-words">Education & Learning</h1>
             <p className="text-xl text-white/90 font-medium">
               O'MARS Radio's commitment to education and lifelong learning
             </p>

@@ -40,7 +40,7 @@ export default function OAPs() {
               <Mic className="w-4 h-4" />
               The Voices of O'MARS
             </div>
-            <h1 className="text-5xl md:text-6xl font-black mb-6 uppercase tracking-tight">Our Presenters</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 uppercase tracking-tight break-words">Our Presenters</h1>
             <p className="text-xl text-white/90 font-medium">Meet the voices behind O'MARS Radio</p>
           </div>
         </div>
