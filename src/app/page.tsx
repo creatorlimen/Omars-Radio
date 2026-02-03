@@ -164,12 +164,12 @@ export default function Home() {
       {/* Top Shows Preview */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-lg">
                 <Star className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">Featured Shows</h2>
+              <h2 className="text-3xl sm:text-4xl font-black text-foreground uppercase tracking-wide">Featured Shows</h2>
             </div>
             <Link href="/top-shows" className="group flex items-center gap-2 text-primary font-bold uppercase text-sm hover:gap-3 transition-all">
               View All Shows
@@ -197,12 +197,12 @@ export default function Home() {
       {/* Top Music Chart */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <div className="flex justify-between items-center mb-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-lg">
                 <Music className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">Top Music</h2>
+              <h2 className="text-3xl sm:text-4xl font-black text-foreground uppercase tracking-wide">Top Music</h2>
             </div>
             <Link href="/top-music" className="group flex items-center gap-2 text-primary font-bold uppercase text-sm hover:gap-3 transition-all">
               Full Chart
@@ -297,12 +297,12 @@ export default function Home() {
       {todaySchedule && (
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <div className="flex justify-between items-center mb-12">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg">
                   <Calendar className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">Today's Schedule</h2>
+                <h2 className="text-3xl sm:text-4xl font-black text-foreground uppercase tracking-wide">Today's Schedule</h2>
               </div>
               <Link href="/schedule" className="group flex items-center gap-2 text-primary font-bold uppercase text-sm hover:gap-3 transition-all">
                 Full Schedule
@@ -352,12 +352,12 @@ export default function Home() {
       {/* Featured Presenters */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg">
                 <Users className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-4xl font-black text-foreground uppercase tracking-wide">Meet Our Presenters</h2>
+              <h2 className="text-3xl sm:text-4xl font-black text-foreground uppercase tracking-wide">Meet Our Presenters</h2>
             </div>
             <Link href="/oaps" className="group flex items-center gap-2 text-primary font-bold uppercase text-sm hover:gap-3 transition-all">
               View All Presenters

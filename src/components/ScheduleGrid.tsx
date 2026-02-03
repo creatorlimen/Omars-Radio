@@ -42,7 +42,7 @@ export default function ScheduleGrid({ schedule, programs, showGMT = false }: Sc
       {/* Day Selector */}
       <div>
         <h3 className="text-sm font-black text-gray-500 uppercase tracking-wider mb-3">Select Day</h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-visible">
           {schedule.map((day) => (
             <button
               key={day.day}
