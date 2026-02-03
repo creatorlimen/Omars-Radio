@@ -102,7 +102,7 @@ export default function Footer() {
             <div className="space-y-4 text-sm">
               <p className="flex items-center gap-3">
                 <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-xs">✉️</span>
-                <a href="mailto:omarscomandedultd@gmail.com" className="text-white/70 hover:text-primary font-medium transition-colors truncate">
+                <a href="mailto:omarscomandedultd@gmail.com" className="text-white/70 hover:text-primary font-medium transition-colors break-all">
                   omarscomandedultd@gmail.com
                 </a>
               </p>

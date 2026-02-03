@@ -49,7 +49,7 @@ export default function RateCard() {
   ];
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
