@@ -106,10 +106,13 @@ export default function Footer() {
                   omarscomandedultd@gmail.com
                 </a>
               </p>
-              <p className="flex items-center gap-3">
+              <div className="flex items-center gap-3">
                 <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-xs">📞</span>
-                <span className="text-white/70 font-medium">+234</span>
-              </p>
+                <div className="flex flex-col">
+                  <span className="text-white/70 font-medium">+234 813 317 4190</span>
+                  <span className="text-white/70 font-medium">+234 915 556 4722</span>
+                </div>
+              </div>
               <div className="flex gap-3 pt-3">
                 <a
                   href="https://www.tiktok.com/@whispersnwords_"

@@ -57,7 +57,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-black text-foreground mb-2 uppercase text-sm">Phone</h3>
-                    <p className="font-medium text-lg text-foreground">+234 (placeholder)</p>
+                    <p className="font-medium text-lg text-foreground">+234 813 317 4190</p>
+                    <p className="font-medium text-lg text-foreground">+234 915 556 4722</p>
                     <p className="text-xs text-gray-500 mt-2">Available during business hours</p>
                   </div>
                 </div>
