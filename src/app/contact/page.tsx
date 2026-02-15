@@ -75,17 +75,17 @@ export default function Contact() {
                       <div className="flex items-center justify-between">
                         <span className="text-gray-600 text-sm font-medium">TikTok</span>
                         <a
-                          href="https://www.tiktok.com/@whispersnwords_"
+                          href="https://www.tiktok.com/@omarsradio"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-primary hover:underline font-medium text-sm"
                         >
-                          @whispersnwords_
+                          @omarsradio
                         </a>
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-gray-600 text-sm font-medium">Instagram</span>
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium text-sm">
+                        <a href="https://www.instagram.com/omarsradio" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium text-sm">
                           @oarsradio
                         </a>
                       </div>
