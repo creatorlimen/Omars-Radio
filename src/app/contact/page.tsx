@@ -86,7 +86,19 @@ export default function Contact() {
                       <div className="flex items-center justify-between">
                         <span className="text-gray-600 text-sm font-medium">Instagram</span>
                         <a href="https://www.instagram.com/omarsradio" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium text-sm">
-                          @oarsradio
+                          @omarsradio
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-gray-600 text-sm font-medium">YouTube</span>
+                        <a href="https://www.youtube.com/@omarsradio" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium text-sm">
+                          @omarsradio
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-gray-600 text-sm font-medium">X (Twitter)</span>
+                        <a href="https://twitter.com/omarsradio" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium text-sm">
+                          @omarsradio
                         </a>
                       </div>
                     </div>
